@@ -6,3 +6,13 @@ However, there are still some problems I would like to resolve, but I can't find
 - Since the animation is pre-loaded when the eye is closed and when it follows your writing, it blinks one more time before stopping. Those two states should stop the blinking immediately.
 - There seems to be a problem with the little three eyes that are always present and don't hide even if the "See password" is checked out. I think this is also caused by the pre-loading of the animation.
 - Login button is still a work in progress
+
+## Preview
+- Main view
+![Main view](images/mainView.png)
+- Email writing view
+![Email writing view](images/EmailWriting.png)
+- Password writing view
+![Password writing view](images/PasswordWriting.png)
+- Password writing view with visible password
+![Password writing view with visible password](images/VisiblePassword.png)
