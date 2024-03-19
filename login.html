@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <title>Horror Login Form</title>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="login.css">
 </head>
 
 <body>
-<form action="/action_page.php" method="post">
+<form action="#" method="post">
   <div class="imgcontainer">
     <svg id="svg" width="307" height="275" viewBox="0 0 307 275" fill="none" xmlns="http://www.w3.org/2000/svg">
 
@@ -157,11 +159,11 @@
 
   <div class="container">
     <label for="uname" hidden><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" name="uname" id="username" required onfocus="setInput(true); setPass(false)" onblur=setInput(false)>
+    <input type="text" name="uname" value="uname" placeholder="Enter Username"  id="username" required onfocus="setInput(true); setPass(false)" onblur=setInput(false)>
 
     <div class="password">
       <label for="psw" hidden><b>Password</b></label>
-      <input id="passwordInput" class="pass" type="password" placeholder="Enter Password" name="psw" required onfocus=setPass(true)>
+      <input type="password" id="passwordInput" class="pass" name="psw" value="Psw" placeholder="Enter Password" required onfocus=setPass(true)>
       <label class="custom-visible">
         <input  class="visible" type="checkbox" name="visible" hidden>
         <img class="visible-icon unchecked" src="svgs/nopeicon.svg" alt="Unchecked" style="display:block;">
@@ -180,15 +182,13 @@
           />
          </mask>
        </defs>
-     </svg>
+    </svg>
 
-    <div class="bar">
-      <img alt="" >
-    </div>
 
   </div>
 </form>
 
+<script src="scripts/login.js"></script>
+
 </body>
-<script src="scripts/login.js"></script> 
 </html>
