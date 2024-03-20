@@ -127,7 +127,7 @@ textInput.addEventListener("blur", () => {
 - se checkato si aprono gli occhi piccoli e iniziano a blinkare
 - l'occhio grande non si apre a meno che non venga riclickato l'input della mail */
 
-document.querySelector(".pass").addEventListener("focus", (e) => {
+document.querySelector(".passwordInput").addEventListener("focus", (e) => {
   const elements = document.querySelectorAll(".lid.lower, .ball");
   elements.forEach((element) => (element.style.display = "none"));
   input = true;

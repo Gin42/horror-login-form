@@ -127,17 +127,17 @@ span.psw {
   flex-direction: row;
 }
 
-.custom-visible {
+.check-visible {
   cursor: pointer;
   display: inline-block;
   position: relative;
 }
 
-.custom-visible .visible {
+.check-visible .visible {
   display: none;
 }
 
-.custom-visible .visible-icon {
+.check-visible .visible-icon {
   height: 20px;
   width: 20px;
   position: absolute;

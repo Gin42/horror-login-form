@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
   <head>
     <title>Horror Login Form</title>
     <meta charset="UTF-8" />
@@ -397,42 +397,40 @@
       </div>
 
       <div class="container">
-        <label for="uname" hidden><b>Username</b></label>
+        <label for="username" hidden>Username</label>
         <input
           type="text"
-          name="uname"
-          value="uname"
-          placeholder="Enter Username"
           id="username"
+          name="username"
+          placeholder="Enter Username"
           required
           onfocus="setInput(true); setPass(false)"
           onblur="setInput(false)"
         />
 
         <div class="password">
-          <label for="psw" hidden><b>Password</b></label>
+          <label for="passwordInput" hidden>Password</label>
           <input
             type="password"
             id="passwordInput"
-            class="pass"
-            name="psw"
-            value="Psw"
+            class="passwordInput"
+            name="password"
             placeholder="Enter Password"
             required
             onfocus="setPass(true)"
           />
-          <label class="custom-visible">
-            <input class="visible" type="checkbox" name="visible" hidden />
+          <label for="check-visible" class="check-visible"> 
+            <input id="check-visible" class="visible" type="checkbox" name="visible" hidden />
             <img
               class="visible-icon unchecked"
               src="svgs/nopeicon.svg"
-              alt="Unchecked"
+              alt="Visible password unchecked"
               style="display: block"
             />
             <img
               class="visible-icon checked"
               src="svgs/icon.svg"
-              alt="Checked"
+              alt="Visible password checked"
               style="display: none"
             />
           </label>
@@ -441,13 +439,15 @@
         <button
           type="submit"
           onfocus="setPass(false)"
-          style="mask: url('#maskLoader')"
         >
           Login
         </button>
       </div>
 
-      <!---<svg xmlns="http://www.w3.org/2000/svg" width="185" height="1" fill="none" preserveAspectRatio="none">
+      <!---
+        style="mask: url('#maskLoader')"
+
+        <svg xmlns="http://www.w3.org/2000/svg" width="185" height="1" fill="none" preserveAspectRatio="none">
         <defs>
             <mask id="maskLoader">
             <rect x="0" y="0" width="307" height="275" fill="white"></rect>
