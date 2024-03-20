@@ -1,7 +1,8 @@
-html,body {
-  height:100%;
-  width:100%;
-  margin:0;
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
 }
 
 body {
@@ -9,30 +10,31 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #2F0000;
-  color: #200B0B;
+  background-color: #2f0000;
+  color: #200b0b;
 }
 
 form {
-  margin:auto;
+  margin: auto;
   width: 50%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: linear-gradient(to bottom, #2F0000,#650000, #2F0000);
+  background: linear-gradient(to bottom, #2f0000, #650000, #2f0000);
   padding: 100px 0px;
 }
 
-input[type=text], input[type=password] {
+input[type="text"],
+input[type="password"] {
   width: 100%;
   padding: 12px 10px;
   margin: 8px 0;
   display: inline-block;
   border: transparent;
-  border-bottom: 3px solid #200B0B;
+  border-bottom: 3px solid #200b0b;
   box-sizing: border-box;
   background: transparent;
-  color: #200B0B;
+  color: #200b0b;
 }
 
 button {
@@ -48,21 +50,21 @@ button {
 }
 
 button::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
   height: 1px; /* Adjust the height as needed */
   background-color: black;
-  mask: url('#maskLoader');
+  mask: url("#maskLoader");
   left: 50%;
   width: 0;
   mask-size: cover; /* Adjust the mask size as needed */
   transform: scaleX(0);
   transform-origin: bottom right;
   transition: transform 0.25s ease-out;
- }
+}
 
 button:hover {
   opacity: 0.8;
@@ -72,7 +74,6 @@ button:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;
 }
-
 
 .cancelbtn {
   width: auto;
@@ -103,19 +104,21 @@ span.psw {
 /* Change styles for span and cancel button on extra small screens */
 @media screen and (max-width: 300px) {
   span.psw {
-     display: block;
-     float: none;
+    display: block;
+    float: none;
   }
   .cancelbtn {
-     width: 100%;
+    width: 100%;
   }
 }
 
-.ball{
-    position: relative;
+.ball {
+  position: relative;
 }
 
-.lid, .ball, .tear {
+.lid,
+.ball,
+.tear {
   display: block;
 }
 
