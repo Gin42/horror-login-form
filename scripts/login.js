@@ -29,12 +29,17 @@ let currentFrame = -1;
 let input = false;
 let password = false;
 let checked = false;
+let animationId = null;
+let sanimationID = null;
 
 function setInput(condition) {
   input = condition;
   if (!input) {
     const elements = document.querySelectorAll(".lid.lower, .ball");
     elements.forEach((element) => (element.style.display = "block"));
+    if (!animationId) {
+      blinking();
+    }
   }
 }
 
@@ -48,26 +53,34 @@ function setPass(condition) {
 
 /*START OF SITE: 
 - occhio grande sbatte se non c'è un input */
+let isAnimating = false;
+
 function blinking() {
-  function animate() {
+ function animate() {
+    if (!isAnimating) return; // Se l'animazione è stata annullata, esci dalla funzione
+
     if (i === -1) {
       updateFrame(1);
     }
+    if (input) {
+      if (animationId) {
+        window.cancelAnimationFrame(animationId);
+        animationId = null;
+        isAnimating = false; // Imposta isAnimating a false per indicare che l'animazione è stata annullata
+        return;
+      }
+    }
     if (!input) {
-      const delayInSeconds =
-        Math.floor(Math.random() * DELAY_RANGE) + DELAY_MIN;
+      const delayInSeconds = Math.floor(Math.random() * DELAY_RANGE) + DELAY_MIN;
       const delayInMilliseconds = delayInSeconds * 1000;
-      // Use setTimeout to schedule closeLid after a delay
       setTimeout(closeLid, delayInMilliseconds);
-      // Stop the animation loop
       return;
     }
-    // Request the next animation frame
-    requestAnimationFrame(animate);
-  }
+    animationId = requestAnimationFrame(animate);
+ }
 
-  // Start the animation loop
-  requestAnimationFrame(animate);
+ isAnimating = true; // Imposta isAnimating a true quando iniziaste l'animazione
+ animationId = requestAnimationFrame(animate);
 }
 
 function updateFrame(increment) {
@@ -149,16 +162,25 @@ document.querySelector(".visible").addEventListener("change", (e) => {
   } else {
     currentFrame = -1;
     updateMask(0);
+    if (sanimationId) {
+      window.cancelAnimationFrame(sanimationId);
+      sanimationId = null;
+    }
   }
 });
 
 function sblinking() {
-  if (currentFrame === -1) {
-    updateMask(1);
+  function sanimate() {
+    if (currentFrame === -1) {
+      updateMask(1);
+    }
   }
-  const delayInSeconds = Math.floor(Math.random() * DELAY_RANGE) + DELAY_MIN;
-  const delayInMilliseconds = delayInSeconds * 1000;
-  setTimeout(closeSLid, delayInMilliseconds);
+  if (passInput.type === "text") {
+    const delayInSeconds = Math.floor(Math.random() * DELAY_RANGE) + DELAY_MIN;
+    const delayInMilliseconds = delayInSeconds * 1000;
+    setTimeout(closeSLid, delayInMilliseconds);
+    sanimationId = requestAnimationFrame(sanimate);
+  }
 }
 
 function updateMask(increment) {
